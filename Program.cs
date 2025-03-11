@@ -1,4 +1,4 @@
-using ConsoleGameOfLife;
+using GameOfLife.Core;
 
 const int rows = 30;
 const int cols = 80;

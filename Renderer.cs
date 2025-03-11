@@ -1,4 +1,4 @@
-using ConsoleGameOfLife.Models;
+using GameOfLife.Core.Models;
 
 namespace ConsoleGameOfLife;
 

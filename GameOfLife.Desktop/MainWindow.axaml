@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="GameOfLife.Desktop.MainWindow"
+        Title="Game of Life"
+        Background="#1a1a1a">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Top toolbar -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" Spacing="10">
+            <Button x:Name="StartStopButton" Content="Start" Click="OnStartStopClick"
+                    Background="#2d2d2d" Foreground="#ffffff"/>
+            <Button Content="Clear" Click="OnClearClick"
+                    Background="#2d2d2d" Foreground="#ffffff"/>
+            <Button Content="Random" Click="OnRandomClick"
+                    Background="#2d2d2d" Foreground="#ffffff"/>
+            <Button Content="Next Pattern" Click="OnNextPatternClick"
+                    Background="#2d2d2d" Foreground="#ffffff"/>
+            <Slider x:Name="SpeedSlider" Width="150" Minimum="50" Maximum="500" Value="100"
+                    TickFrequency="50" IsSnapToTickEnabled="True"/>
+            <TextBlock Text="{Binding #SpeedSlider.Value, StringFormat='{}{0:F0}ms'}"
+                       VerticalAlignment="Center" Foreground="#ffffff"/>
+        </StackPanel>
+
+        <!-- Game grid -->
+        <Canvas x:Name="GameCanvas" Grid.Row="1" Background="#000000"
+                Margin="10,0,10,0"
+                PointerPressed="OnCanvasPointerPressed"
+                PointerMoved="OnCanvasPointerMoved"/>
+
+        <!-- Status bar -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10" Spacing="10">
+            <TextBlock x:Name="StatusText" Text="Ready" VerticalAlignment="Center"
+                      Foreground="#ffffff"/>
+        </StackPanel>
+    </Grid>
+</Window>
