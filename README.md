@@ -1,6 +1,6 @@
 # Console Game of Life
 
-A console-based implementation of Conway's Game of Life written in Python.
+A modern C# implementation of Conway's Game of Life using .NET 8 and latest C# features.
 
 ## Description
 
@@ -15,7 +15,16 @@ Conway's Game of Life is a cellular automaton that follows simple rules to creat
 
 ## Requirements
 
-- Python 3.8 or higher
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+
+## Features
+
+- Modern C# 12 syntax
+- Immutable game state
+- Pattern record structs
+- Top-level statements
+- Enhanced console rendering with colors
+- Pattern library with classic Game of Life patterns
 
 ## Installation
 
@@ -25,23 +34,28 @@ git clone https://github.com/rgaleevbc/console-game-of-life.git
 cd console-game-of-life
 ```
 
-2. Install the required packages:
+2. Build and run:
 ```bash
-pip install -r requirements.txt
+dotnet run --configuration Release
 ```
 
-## Usage
+## Controls
 
-Run the game using:
-```bash
-python game_of_life.py
-```
+- SPACEBAR: Pause/Resume the simulation
+- R: Randomize the grid
+- C: Clear the grid
+- P: Load next pattern from pattern library
+- Arrow keys: Adjust simulation speed
+- Q: Quit the game
 
-Controls:
-- Press SPACE to pause/resume the simulation
-- Press R to randomize the grid
-- Press C to clear the grid
-- Press Q to quit
+## Project Structure
+
+- `Program.cs`: Entry point and top-level statements
+- `GameEngine.cs`: Core game logic and rules implementation
+- `Grid.cs`: Immutable grid implementation with pattern matching
+- `Renderer.cs`: Console rendering and user interface
+- `Patterns.cs`: Built-in pattern library
+- `Models/`: Data models and record structs
 
 ## License
 
